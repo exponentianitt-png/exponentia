@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="home.css">
+    <script type="text/javascript" src="app.js" defer></script>
+    <style>
+        /* Essential styles for the sponsor layout */
+        .sponsors-section {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            transition: all 0.4s ease;
+            text-align: left;
+        }
+        
+        .sponsor-tier {
+            margin-bottom: 50px;
+        }
+
+        .sponsor-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .sponsor-link img {
+            max-width: 220px; /* Slightly larger for emphasis */
+            height: auto;
+            transition: transform 0.3s ease;
+            border-radius: 10px;
+        }
+
+        .sponsor-link img:hover {
+            transform: scale(1.05);
+        }
+
+        .sponsor-title {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .tier-heading {
+            font-size: 1.5rem;
+            color: #00d4ff;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+
+        /* Styling for the About Us Section */
+/* Styling for the About Us Section */
+#aboutus {
+    color: #ffffff; /* Default white for general text */
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#aboutus h2 {
+    color: #00d4ff; /* Consistent cyan for the main heading */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+#aboutus p {
+    color: #b0b3c1; /* Soft grey for long paragraphs (easier to read) */
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+#aboutus h4 {
+    color: #00d4ff; /* Highlights the Exponentia description */
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+        /* --- SPEAKER SECTION STYLES --- */
+        .speaker {
+            padding: 60px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .speakerhead {
+            font-size: 2.5rem;
+            color: #00d4ff;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .speakers-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .speaker-card {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            transition: all 0.4s ease;
+            text-align: left;
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #00d4ff;
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+        }
+
+        .speaker-card.reverse {
+            flex-direction: row-reverse;
+            text-align: right;
+        }
+
+        .speaker-img-wrapper img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #00d4ff;
+            padding: 5px;
+        }
+
+        .speaker-info {
+            padding: 0 40px;
+            flex: 1;
+        }
+
+        .speaker-info h3 {
+            font-size: 1.8rem;
+            color: #fff;
+            margin: 0 0 5px 0;
+        }
+
+        .speaker-info h4 {
+            font-size: 1.1rem;
+            color: #00d4ff;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+
+        .speaker-info p {
+            color: #b0b3c1;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .speaker-card, .speaker-card.reverse {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+            .speaker-info {
+                padding: 20px 0 0 0;
+            }
+            .speakerhead {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="sidebar">
+        <ul>
+            <li>
+                <span class="logo">Exponentia</span>
+                <button onclick="toggleSidebar()" id="toggle-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                        <path d="m313-480 155 156q11 11 11.5 27.5T468-268q-11 11-28 11t-28-11L228-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T468-692q11 11 11 28t-11 28L313-480Zm264 0 155 156q11 11 11.5 27.5T732-268q-11 11-28 11t-28-11L492-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T732-692q11 11 11 28t-11 28L577-480Z" />
+                    </svg>
+                </button>
+            </li>
+            <li class="active">
+                <a href="index.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                        <path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z" />
+                    </svg>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li><a href="offline_events.html"><span>Events</span></a></li>
+            <li><a href="people.html"><span>Peoples</span></a></li>
+            <li><a href="help.html"><span>Help</span></a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="container" id="home-main">
+            <div class="header">
+                <div class="nit_logo">
+                    <a href="https://www.nitt.edu/">
+                        <img src="NIT_logo.png" alt="NIT-Trichy">
+                    </a>
+                </div>
+            </div>
+
+            <img id="logo" src="logo(1).png" alt="Logo" style="width: 800px; height: auto;">
+
+            <div class="timer-card">
+                <div class="timer-grid">
+                    <div class="time-segment"><span id="days">00</span><div class="label">Days</div></div>
+                    <div class="time-segment"><span id="hours">00</span><div class="label">Hours</div></div>
+                    <div class="time-segment"><span id="minutes">00</span><div class="label">Mins</div></div>
+                    <div class="time-segment"><span id="seconds">00</span><div class="label">Secs</div></div>
+                    <div class="timer-footer"><span>TO GO</span></div>
+                </div>
+            </div>
+
+            <div class="button">
+                <a href="https://forms.gle/F2C2CBEZ6XY6W4R88" style="text-decoration: none; color: #ffffff">Register</a>
+            </div>
+        </div>
+
+        <div class="container sponsors-section">
+            
+            <div class="sponsor-tier">
+                <h2 class="tier-heading">our Green energy partner</h2>
+                <div class="sponsor-container">
+                    <a href="https://orientgreenpower.com/default.asp" target="_blank" class="sponsor-link">
+                        <img src="ogp .jpeg" alt="Orient Green Power">
+                    </a>
+                </div>
+            </div>
+
+            <div class="sponsor-tier">
+                <h2 class="tier-heading">Hygiene Partner</h2>
+                <div class="sponsor-container">
+                    <a href="https://www.medimixayurveda.com/" target="_blank" class="sponsor-link">
+                        <img src="medimix.png" alt="Medimix">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="speaker">
+            <h2 class="speakerhead">Informative lectures given by</h2>
+                <div class="speaker-card">
+                    <div class="speaker-img-wrapper">
+                        <img src="prof joydev.jpeg" alt="Speaker XYZ">
+                    </div>
+                    <div class="speaker-info">
+                        <h3><a href="https://www.isical.ac.in/~joydev/" target="_blank" style="text-decoration: none; color: inherit;">Prof. Joydev Chattopadhyay</a></h3>
+                        <h4>Professor, Indian Statistical Institute, Kolkata </h4>
+                        <p>Mathematical Modelling on Ecology & Epidemiology and Eco-epidemiology</p>
+                        <a href="https://isi.irins.org/profile/275102#education_information_panel" target="_blank" class="profile-link" style="color: var(--accent-clr); text-decoration: none; font-size: 0.9rem; font-weight: bold; margin-top: 10px; display: inline-block;">View Profile →</a>
+                    </div>
+           </div>  
+          <div style="height: 80px;"></div>
+            
+          <div class="container" id="aboutus" style="color: white;">
+            <h2>About Us</h2>
+            <p>National Institute of Technology, Tiruchirappalli (NITT) is one of India’s premier institutions, known for its academic excellence, strong research culture and vibrant campus life. NITT stands as a symbol of academic excellence, innovation and integrity. NITT has secured a prestigious position in the National Institutional Ranking Framework (NIRF), being ranked among the top 10 engineering colleges in the country and the #1 NIT overall, reflecting its excellence in academics, research and innovation. In subject specific metrics such as Mathematics, the institute also shines with a strong national rank. With a legacy of producing outstanding engineers and scientists. Rooted in tradition yet driven by modern vision, NITT continues to shape minds that contribute meaningfully to science, technology and society.</p>
+            <p>The Department of Mathematics at the National Institute of Technology, Tiruchirappalli is one of the institute’s most distinguished academic units. With a multidisciplinary approach to teaching and research, the department focuses on providing mathematical solutions to socio-economic, technological and real-world challenges. Supported by eighteen faculty members across major areas of mathematics, the department actively contributes to advanced research, quality education, international collaborations, and the organization of conferences, workshops and outreach programs.</p>
+            <h4>Exponentia is the annual flagship event of the Department of Mathematics, organized to celebrate mathematics beyond the classroom. It provides a platform for students to explore ideas, showcase talents and engage with mathematics through talks, competitions, and interactive activities among the student community. Exponentia’26 marks the second edition of Exponentia and is organized under the guidance of the Faculty Advisor, Dr. Jitraj Saha, AP\Maths.</h4>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Social Media</h3>
+                <ul>
+                    <li><a href="https://www.facebook.com/share/1DDD2s5rnV/" target="_blank">Facebook</a></li>
+                    <li><a href="https://www.linkedin.com/company/department-of-mathematics-nit-tiruchirappalli/" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://www.instagram.com/exponentia.nitt" target="_blank">Instagram</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="https://forms.gle/F2C2CBEZ6XY6W4R88" target="_blank">Registration</a></li>
+                    <li><a href="help.html">Contact us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Exponentia. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

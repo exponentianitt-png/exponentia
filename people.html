@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>People - Exponentia</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="home.css">
+    <script type="text/javascript" src="app.js" defer></script>
+    <style>
+        /* Specific Styles for People Page */
+        .people-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #00d4ff;
+            margin: 40px 0 20px;
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Flexbox for centered rows (Advisors) */
+        .centered-section {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        /* Grid for Core Team Members */
+        .people-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .person-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+            max-width: 320px; /* Limits size in flex rows */
+        }
+
+        .person-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+            border-color: #00d4ff;
+        }
+
+        .person-card img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid #00d4ff;
+        }
+
+        .person-card h3 {
+            margin: 10px 0 5px 0;
+            color: #ffffff;
+            font-size: 1.2rem;
+        }
+
+        .person-card p {
+            color: #b0b3c1;
+            font-size: 0.9rem;
+            margin: 2px 0;
+        }
+
+        .page-title {
+            text-align: center;
+            font-size: 3.5rem;
+            margin-top: 40px;
+            color: #ffffff;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-title { font-size: 2.5rem; }
+            .centered-section { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="sidebar">
+        <ul>
+            <li>
+                <span class="logo">Exponentia</span>
+                <button onclick="toggleSidebar()" id="toggle-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                        <path d="m313-480 155 156q11 11 11.5 27.5T468-268q-11 11-28 11t-28-11L228-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T468-692q11 11 11 28t-11 28L313-480Zm264 0 155 156q11 11 11.5 27.5T732-268q-11 11-28 11t-28-11L492-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T732-692q11 11 11 28t-11 28L577-480Z" />
+                    </svg>
+                </button>
+            </li>
+            <li><a href="index.html"><span>Home</span></a></li>
+            <li><a href="offline_events.html"><span>Events</span></a></li>
+            <li class="active"><a href="people.html"><span>Peoples</span></a></li>
+            <li><a href="help.html"><span>Help</span></a></li>
+        </ul>
+    </nav>
+
+    <main class="people-container">
+        <h1 class="page-title">Meet Our Team</h1>
+
+        <h2 class="section-title">Faculty Advisor</h2>
+        <div class="centered-section">
+            <div class="person-card">
+                <img src="sample_dp.png" alt="Dr. Jitraj Saha">
+                <h3>Dr. Jitraj Saha</h3>
+                <p>Faculty Advisor</p>
+                <p>Assistant Professor, NIT Trichy</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">Student Advisors</h2>
+        <div class="centered-section">
+            <div class="person-card">
+                <img src="sample_dp.png" alt="Advisor 1">
+                <h3>Mr. Anandasrinivasan</h3>
+                <p>Chief Student Advisor for events</p>
+            </div>
+            <div class="person-card">
+                <img src="sample_dp.png" alt="Advisor 2">
+                <h3>Mr. Madhan Kumar</h3>
+                <p>Chief Student Advisor for Public Relations and Logistics & Operations Committee</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">Core Team Members</h2>
+        <div class="people-grid">
+            <div class="person-card">
+                <img src="Naveen Narayanan.jpg" alt="Naveen N">
+                <h3>Naveen N</h3>
+                <p>Chief Event Coordinator</p>
+            </div>
+
+            <div class="person-card">
+                <img src="himakshi.jpg" alt="Himakshi">
+                <h3>Himakshi</h3>
+                <p>Finance & Budget Coordinator</p>
+            </div>
+
+            <div class="person-card">
+                <img src="sample_dp.png" alt="Sonu Kumar">
+                <h3>Sonu Kumar</h3>
+                <p>Treasurer</p>
+            </div>
+
+            <div class="person-card">
+                <img src="Passport Size Photo Roshini S.jpg.jpeg" alt="S Roshini">
+                <h3>S Roshini</h3>
+                <p>Sponsorship & Partnerships Head</p>
+            </div>
+
+            <div class="person-card">
+                <img src="syanth.jpeg" alt="Sayanth S">
+                <h3>Sayanth S</h3>
+                <p>Public Relations Head</p>
+            </div>
+
+            <div class="person-card">
+                <img src="bishal.jpeg" alt="Vishal Kumar">
+                <h3>Vishal Kumar</h3>
+                <p>Core Coordinator</p>
+            </div>
+
+            <div class="person-card">
+                <img src="mansi.jpeg" alt="Mansi Bansal">
+                <h3>Mansi Bansal</h3>
+                <p>Core Coordinator</p>
+            </div>
+
+            <div class="person-card">
+                <img src="tina.jpeg" alt="Tinamoni Panging">
+                <h3>Tinamoni Panging</h3>
+                <p>Core Coordinator</p>
+            </div>
+
+            <div class="person-card">
+                <img src="Manoj Chandan.jpg" alt="Manoj Chandan">
+                <h3>Manoj Chandan</h3>
+                <p>Core Coordinator</p>
+            </div>
+
+            <div>
+
+            </div>
+            
+            <div class="person-card">
+                <img src="Thangapandi.jpeg" alt="Thangapandi V">
+                <h3>Thangapandi V</h3>
+                <p>Core Coordinator</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Social Media</h3>
+                <ul>
+                    <li><a href="https://www.facebook.com/share/1DDD2s5rnV/" target="_blank">Facebook</a></li>
+                    <li><a href="https://www.linkedin.com/company/department-of-mathematics-nit-tiruchirappalli/" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://www.instagram.com/exponentia.nitt" target="_blank">Instagram</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="https://forms.gle/F2C2CBEZ6XY6W4R88" target="_blank">Registration</a></li>
+                    <li><a href="help.html">Contact us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Exponentia. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
